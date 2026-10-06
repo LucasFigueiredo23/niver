@@ -130,9 +130,9 @@
   bottom: 1rem;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 0.875rem;
-  letter-spacing: 0.2em;
-  color: var(--text-muted);
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
 }
 
 .cake.is-done .cake__body {

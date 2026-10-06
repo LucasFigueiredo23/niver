@@ -3,10 +3,10 @@ import './Intro.css'
 
 /* Abertura curta (< 2 s). Pode pular com o botão, Enter ou Esc. */
 const SEQUENCE = [
-  { at: 0, label: 'Initializing experience', pct: 1 },
-  { at: 300, label: 'Loading Celina', pct: 33 },
-  { at: 640, label: 'Loading Celina', pct: 77 },
-  { at: 960, label: 'Loading Celina', pct: 100 },
+  { at: 0, label: 'Iniciando a experiência', pct: 1 },
+  { at: 300, label: 'Carregando Celina', pct: 33 },
+  { at: 640, label: 'Carregando 20 anos', pct: 77 },
+  { at: 960, label: 'Carregando 20 anos', pct: 100 },
   { at: 1200, ready: true },
 ]
 const LEAVE_AT = 1600
@@ -46,7 +46,7 @@ export function Intro({ onDone }) {
     <div className={`intro ${leaving ? 'is-leaving' : ''}`}>
       <div className="intro__box" aria-hidden="true">
         {step.ready ? (
-          <p className="intro__ready">Ready?</p>
+          <p className="intro__ready">Bora?</p>
         ) : (
           <>
             <p className="intro__pct">

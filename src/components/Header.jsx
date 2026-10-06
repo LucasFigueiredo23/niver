@@ -16,8 +16,8 @@ export function Header({ ready }) {
   return (
     <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`} data-ready={ready}>
       <div className="container site-header__inner">
-        <a href="#topo" className="wordmark" aria-label="Celina's Day, voltar ao topo">
-          Celina&apos;s Day <small>777</small>
+        <a href="#topo" className="wordmark" aria-label="Celina, 20 anos: voltar ao topo">
+          Celina <small>20</small>
         </a>
         <button
           type="button"
@@ -27,7 +27,7 @@ export function Header({ ready }) {
           onClick={() => setSoundOn((on) => !on)}
         >
           <Icon name={soundOn ? 'soundOn' : 'soundOff'} size={18} />
-          <span aria-hidden="true">{soundOn ? 'Som on' : 'Som off'}</span>
+          <span aria-hidden="true">{soundOn ? 'Som ligado' : 'Som desligado'}</span>
         </button>
       </div>
     </header>

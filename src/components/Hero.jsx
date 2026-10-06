@@ -47,7 +47,7 @@ export function Hero({ ready }) {
     t.count = 0
     const unlocking = !secret
     setSecret(unlocking)
-    showToast(unlocking ? 'Secret mode unlocked' : 'Secret mode off')
+    showToast(unlocking ? 'Modo secreto liberado' : 'Modo secreto desligado')
     celebrate(
       unlocking
         ? { size: 'big', colors: CONFETTI_COLORS.lime, sound: 'unlock' }
@@ -66,7 +66,7 @@ export function Hero({ ready }) {
 
       <div className="container hero__inner">
         <h1 id="hero-title" className="hero__title">
-          <span className="sr-only">Celina&apos;s Day</span>
+          <span className="sr-only">Celina, {hero.ageLine}</span>
           <span className="hero__name" aria-hidden="true">
             {NAME.split('').map((char, i) => (
               <span key={i} className="hero__char" style={{ '--i': i }}>
@@ -75,7 +75,7 @@ export function Hero({ ready }) {
             ))}
           </span>
           <span className="hero__day hero__fade" style={{ '--d': 1 }} aria-hidden="true">
-            &apos;s day
+            {hero.ageLine}
           </span>
         </h1>
 
@@ -95,7 +95,7 @@ export function Hero({ ready }) {
           </p>
           <div className="hero__actions hero__fade" style={{ '--d': 3 }}>
             <Button magnetic icon="arrow" onClick={startCelebration}>
-              Start the celebration
+              Começar a festa
             </Button>
             <Button variant="ghost" iconStart="gift" onClick={openSurprise}>
               Tenho uma surpresa

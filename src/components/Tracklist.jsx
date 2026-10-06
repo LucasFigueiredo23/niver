@@ -10,9 +10,9 @@ import './Tracklist.css'
 
 const BANDS = 20
 const STATUS_TEXT = {
-  idle: 'Ready',
-  playing: 'Now playing…',
-  paused: 'Paused',
+  idle: 'Pronto pra tocar',
+  playing: 'Tocando agora…',
+  paused: 'Pausado',
   ended: 'Acabou. De novo?',
   error: 'Este navegador não liberou o áudio',
 }
@@ -127,9 +127,9 @@ export function Tracklist() {
               <div className="player__cover-type" aria-hidden="true">
                 <span>777</span>
                 <strong>
-                  Celina&apos;s
+                  Versão
                   <br />
-                  version
+                  da Celina
                 </strong>
               </div>
             </div>

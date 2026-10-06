@@ -46,7 +46,7 @@ export function Wish() {
             ))}
           </div>
           <div className="cake__body" aria-hidden="true">
-            <span className="cake__label">777</span>
+            <span className="cake__label">20</span>
           </div>
         </div>
 

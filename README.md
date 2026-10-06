@@ -1,6 +1,6 @@
-# Celina's Day 🎂
+# Celina, 20 anos 🎂
 
-Microsite de aniversário da Celina Pacheco. React + Vite, CSS puro com design tokens, sem bibliotecas de animação: confete em canvas, beat original em Web Audio e todo o conteúdo num arquivo só.
+Microsite dos 20 anos da Celina Pacheco. React + Vite, CSS puro com design tokens, sem bibliotecas de animação: confete em canvas, beat original em Web Audio e todo o conteúdo num arquivo só.
 
 ## Rodar no seu computador
 
@@ -29,11 +29,11 @@ Coloque 5 fotos em `public/fotos/` com estes nomes:
 - `celina-avatar.jpg`: círculo do Instagram (quadrada, só o rosto)
 - `celina-2.jpg`: capa do single no player (ganha efeito duotone roxo/verde)
 - `celina-3.jpg`: card de MVP
-- `celina-4.jpg`: seção "But seriously…"
+- `celina-4.jpg`: seção "Mas falando sério…"
 
 Vertical (4:5 ou 3:4), por volta de 1200 px de largura. Enquanto a foto não existir, aparece um placeholder `[ FOTO DA CELINA ]`. Outro nome ou formato? Troque o caminho em `photos` no `celina.js`.
 
-### Faça um pedido
+### Faz um pedido
 
 Antes do Instagram tem um bolo com 3 velas: cada toque apaga uma e, quando a última apaga, sai a chuva de confete. Texto e quantidade de velas ficam em `wish` no `celina.js`.
 
@@ -45,13 +45,20 @@ Para usar um áudio seu: coloque o arquivo em `public/audio/` e, em `celina.js`,
 
 No iPhone, o som do Web Audio não sai com o modo silencioso ligado. O site avisa isso durante a reprodução.
 
-## Publicar (Vercel, grátis)
+## Publicar (Cloudflare, grátis)
 
-1. Suba a pasta para um repositório no GitHub.
-2. Em vercel.com, "Add New → Project", importe o repositório. Ele detecta Vite sozinho.
-3. Depois do primeiro deploy, copie a URL final, cole em `.env` (`VITE_SITE_URL=https://...`, sem barra no final), faça commit e push. É isso que faz a prévia com imagem aparecer quando o link é mandado no WhatsApp.
+O projeto já vem configurado para o Cloudflare Workers (`wrangler.jsonc`): o Vite gera a pasta `dist/` e o Cloudflare serve esses arquivos.
 
-Netlify também funciona: comando de build `npm run build`, pasta `dist`.
+1. Em dash.cloudflare.com, vá em **Workers & Pages → Create → Import a repository** e escolha o repositório `niver` no GitHub.
+2. Confira os campos:
+   - Build command: `npm run build`
+   - Deploy command: `npx wrangler deploy`
+3. Clique em **Deploy**. O site fica em `https://niver.<sua-conta>.workers.dev` (ou ligue um domínio seu em **Settings → Domains & Routes**).
+4. Para a prévia com foto no WhatsApp: em **Settings → Build → Variables and secrets**, crie `VITE_SITE_URL` com a URL final (sem barra no final) e faça um novo deploy. Essa variável entra no momento do build.
+
+Depois disso, cada `git push` na `main` publica sozinho.
+
+Pelo terminal, sem GitHub: `npx wrangler login` uma vez e depois `npm run deploy`.
 
 Para gerar os arquivos estáticos manualmente: `npm run build` (saída em `dist/`).
 
