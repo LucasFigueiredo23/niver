@@ -1,0 +1,11 @@
+// Cloudflare Workers (só arquivos estáticos). O build do Vite gera ./dist e
+// o Cloudflare serve essa pasta. O "name" vira o endereço niver.<sua-conta>.workers.dev
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "niver",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
