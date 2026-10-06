@@ -45,20 +45,13 @@ Para usar um áudio seu: coloque o arquivo em `public/audio/` e, em `celina.js`,
 
 No iPhone, o som do Web Audio não sai com o modo silencioso ligado. O site avisa isso durante a reprodução.
 
-## Publicar (Cloudflare, grátis)
+## Publicar (Vercel, grátis)
 
-O projeto já vem configurado para o Cloudflare Workers (`wrangler.jsonc`): o Vite gera a pasta `dist/` e o Cloudflare serve esses arquivos.
+1. Suba a pasta para um repositório no GitHub.
+2. Em vercel.com, "Add New → Project", importe o repositório. Ele detecta Vite sozinho.
+3. Depois do primeiro deploy, copie a URL final, cole em `.env` (`VITE_SITE_URL=https://...`, sem barra no final), faça commit e push. É isso que faz a prévia com imagem aparecer quando o link é mandado no WhatsApp.
 
-1. Em dash.cloudflare.com, vá em **Workers & Pages → Create → Import a repository** e escolha o repositório `niver` no GitHub.
-2. Confira os campos:
-   - Build command: `npm run build`
-   - Deploy command: `npx wrangler deploy`
-3. Clique em **Deploy**. O site fica em `https://niver.<sua-conta>.workers.dev` (ou ligue um domínio seu em **Settings → Domains & Routes**).
-4. Para a prévia com foto no WhatsApp: em **Settings → Build → Variables and secrets**, crie `VITE_SITE_URL` com a URL final (sem barra no final) e faça um novo deploy. Essa variável entra no momento do build.
-
-Depois disso, cada `git push` na `main` publica sozinho.
-
-Pelo terminal, sem GitHub: `npx wrangler login` uma vez e depois `npm run deploy`.
+Netlify também funciona: comando de build `npm run build`, pasta `dist`.
 
 Para gerar os arquivos estáticos manualmente: `npm run build` (saída em `dist/`).
 
