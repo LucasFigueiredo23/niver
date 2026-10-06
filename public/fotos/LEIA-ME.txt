@@ -1,0 +1,9 @@
+Fotos usadas no site (já recortadas e tratadas):
+
+  celina-1.jpg       → credencial "All access" do hero (4:5)
+  celina-2.jpg       → capa do single no player (quadrada, ganha duotone roxo/verde)
+  celina-3.jpg       → card de MVP (quadrada)
+  celina-4.jpg       → seção "But seriously…" (3:4)
+  celina-avatar.jpg  → círculo do Instagram (quadrada)
+
+Para trocar: substitua o arquivo mantendo o nome, ou mude o caminho em src/data/celina.js.

@@ -1,0 +1,74 @@
+.ace {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-toast);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ace__text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(5rem, 24vw, 16rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-shadow: 0 0 60px color-mix(in srgb, var(--accent) 55%, transparent);
+  animation: ace-pop 1.4s var(--ease-out) forwards;
+}
+
+.ace__ball {
+  position: absolute;
+  top: 70%;
+  left: -6rem;
+  color: var(--c-white);
+  animation: ball-fly 1.1s var(--ease-in-out) forwards;
+}
+
+@keyframes ace-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-10deg);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.05) rotate(-5deg);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.15) rotate(-5deg);
+  }
+}
+
+@keyframes ball-fly {
+  to {
+    transform: translate(calc(100vw + 12rem), -55vh) rotate(900deg);
+  }
+}
+
+@keyframes ace-fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  20%,
+  75% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ace__ball {
+    display: none;
+  }
+
+  .ace__text {
+    animation: ace-fade 1.4s forwards;
+  }
+}

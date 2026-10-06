@@ -1,0 +1,88 @@
+/* ==========================================================================
+   DESIGN TOKENS — Celina's Day
+   Toda cor, fonte, espaço e tempo de animação do site sai daqui.
+   ========================================================================== */
+
+:root {
+  /* Paleta base */
+  --c-black: #050505;
+  --c-ink: #09090b;
+  --c-purple-deep: #3b0764;
+  --c-purple: #8b5cf6;
+  --c-purple-neon: #a855f7;
+  --c-lime: #a3e635;
+  --c-lime-soft: #d9f99d;
+  --c-white: #f8fafc;
+  --c-gray: #a1a1aa;
+  --c-danger: #fda4af; /* só para mensagens de erro */
+
+  /* Papéis de cor (use estes nos componentes, não a paleta crua) */
+  --bg: var(--c-black);
+  --bg-raised: var(--c-ink);
+  --surface: rgb(248 250 252 / 0.035);
+  --surface-strong: rgb(248 250 252 / 0.07);
+  --line: rgb(248 250 252 / 0.08);
+  --line-strong: rgb(248 250 252 / 0.16);
+  --text: var(--c-white);
+  --text-muted: var(--c-gray);
+  --accent: var(--c-lime);
+  --accent-soft: var(--c-lime-soft);
+  --accent-2: var(--c-purple-neon);
+  --accent-ink: var(--c-black);
+
+  /* Glow e gradiente assinatura (neon é acento, nunca preenchimento) */
+  --glow-accent: 0 0 28px rgb(163 230 53 / 0.32);
+  --glow-accent-2: 0 0 60px rgb(168 85 247 / 0.28);
+  --gradient-signature: linear-gradient(135deg, var(--c-purple), var(--c-lime));
+
+  /* Tipografia: Syne (display) + Manrope (texto) */
+  --font-display: 'Syne', 'Arial Black', 'Helvetica Neue', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --fs-label: 0.75rem;
+  --fs-small: 0.875rem;
+  --fs-body: 1rem;
+  --fs-lead: clamp(1.0625rem, 0.98rem + 0.45vw, 1.3125rem);
+  --fs-h3: clamp(1.5rem, 1.1rem + 1.6vw, 2.375rem);
+  --fs-h2: clamp(2.1rem, 1.2rem + 4.2vw, 5rem);
+  --fs-display: clamp(2rem, 9vw, 7.5rem);
+  --fs-hero: min(14vw, 12rem); /* Syne é larga: "CELINA" ≈ 5,6em */
+
+  /* Espaçamento */
+  --section-pad: clamp(5rem, 3.5rem + 8vw, 10rem);
+  --gutter: clamp(1.25rem, 0.75rem + 3vw, 3rem);
+  --container: 75rem;
+
+  /* Forma */
+  --radius-sm: 6px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --shadow-card: 0 30px 80px -30px rgb(0 0 0 / 0.9);
+
+  /* Movimento */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 160ms;
+  --dur-base: 320ms;
+  --dur-slow: 800ms;
+
+  /* Camadas */
+  --z-header: 50;
+  --z-grain: 60;
+  --z-confetti: 80;
+  --z-toast: 90;
+  --z-cursor: 100;
+  --z-intro: 110;
+}
+
+/* Easter egg: modo secreto inverte os acentos */
+html[data-secret='on'] {
+  --accent: var(--c-purple-neon);
+  --accent-soft: var(--c-purple);
+  --accent-2: var(--c-lime);
+  --glow-accent: 0 0 32px rgb(168 85 247 / 0.5);
+  --glow-accent-2: 0 0 60px rgb(163 230 53 / 0.22);
+  --gradient-signature: linear-gradient(135deg, var(--c-lime), var(--c-purple));
+}

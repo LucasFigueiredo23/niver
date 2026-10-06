@@ -1,0 +1,61 @@
+.finale {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-height: 90svh;
+  padding-block: var(--section-pad);
+  overflow: clip;
+  text-align: center;
+}
+
+.finale__beam {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    conic-gradient(
+      from 180deg at 50% -5%,
+      transparent 158deg,
+      color-mix(in srgb, var(--accent-2) 20%, transparent) 172deg,
+      rgb(248 250 252 / 0.1) 180deg,
+      color-mix(in srgb, var(--accent-2) 20%, transparent) 188deg,
+      transparent 202deg
+    ),
+    radial-gradient(50% 40% at 50% 100%, color-mix(in srgb, var(--c-purple-deep) 70%, transparent), transparent);
+}
+
+.finale__court {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  bottom: -8%;
+  width: min(150vw, 1500px);
+  color: var(--accent);
+  opacity: 0.16;
+  transform: translateX(-50%) perspective(700px) rotateX(68deg);
+  transform-origin: 50% 100%;
+  -webkit-mask-image: linear-gradient(to top, #000, transparent 80%);
+  mask-image: linear-gradient(to top, #000, transparent 80%);
+}
+
+.finale__inner {
+  display: grid;
+  justify-items: center;
+}
+
+.finale__title {
+  max-width: 10ch;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-display);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.finale__inner .lede {
+  margin-inline: auto;
+  margin-bottom: 2.25rem;
+}

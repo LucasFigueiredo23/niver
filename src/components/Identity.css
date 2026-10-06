@@ -1,0 +1,88 @@
+.traits {
+  border-top: 1px solid var(--line);
+}
+
+.trait {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.6rem 1rem;
+  padding-block: clamp(1.25rem, 1rem + 1.5vw, 2.1rem);
+  border-bottom: 1px solid var(--line);
+}
+
+/* linha de quadra que "pinta" a borda no hover */
+.trait::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.trait__icon {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--accent);
+  transition:
+    transform 0.5s var(--ease-spring),
+    background-color 0.3s;
+}
+
+.trait__label {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-h3);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.trait__line {
+  grid-column: 1 / -1;
+  max-width: 34rem;
+  font-size: var(--fs-lead);
+  line-height: 1.45;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+
+@media (min-width: 56rem) {
+  .trait {
+    grid-template-columns: 3.5rem minmax(0, 1fr) minmax(0, 1.15fr);
+  }
+
+  .trait__line {
+    grid-column: 3;
+  }
+}
+
+@media (hover: hover) {
+  .trait:hover::after {
+    transform: scaleX(1);
+  }
+
+  .trait:hover .trait__icon {
+    transform: rotate(-14deg) scale(1.08);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+  }
+
+  .trait:hover .trait__label {
+    transform: translateX(0.5rem);
+  }
+
+  .trait:hover .trait__line {
+    color: var(--text);
+  }
+}

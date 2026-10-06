@@ -1,0 +1,58 @@
+.say-hi {
+  isolation: isolate;
+}
+
+/* grid sutil, apagando nas bordas */
+.say-hi::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: center;
+  -webkit-mask-image: radial-gradient(55% 60% at 50% 50%, #000, transparent);
+  mask-image: radial-gradient(55% 60% at 50% 50%, #000, transparent);
+}
+
+.say-hi__inner {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.say-hi__inner .lede {
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+.say-hi__ring {
+  width: 7.5rem;
+  aspect-ratio: 1;
+  margin-bottom: 2rem;
+  padding: 3px;
+  border-radius: 50%;
+  background: conic-gradient(from 210deg, var(--c-purple), var(--c-purple-neon), var(--c-lime), var(--c-lime-soft), var(--c-purple));
+  box-shadow: var(--glow-accent-2);
+}
+
+.say-hi__photo {
+  width: 100%;
+  height: 100%;
+  border: 4px solid var(--bg);
+  border-radius: 50%;
+}
+
+.say-hi__photo .photo__placeholder {
+  border: 0;
+}
+
+.say-hi__photo .photo__placeholder span {
+  font-size: 0.55rem;
+}
+
+.say-hi__photo .photo__placeholder small {
+  display: none;
+}
